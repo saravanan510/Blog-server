@@ -18,13 +18,7 @@ const app = express();
 const port = process.env.PORT || 8888;
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://blog-app-client-rose.vercel.app", // Replace with your client URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(compression());
 app.use(
   "/public/images",
